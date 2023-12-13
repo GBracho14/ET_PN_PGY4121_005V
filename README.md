@@ -10,10 +10,13 @@ De momento la aplicación puede realizar registro e inicio de sesión de usuario
 
 La aplicación fue desarrollada utilizando las siguientes tecnologías:  
 - Ionic/Angular  
-- Firebase
+- Firebase DataBase
+- Firebase Autentication
+- Firebase Storage
 
-...  
+'''
 git clone repo  
 cd folder  
 npm i  
-ionic serve  
+ionic serve
+'''
