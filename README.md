@@ -14,9 +14,9 @@ La aplicación fue desarrollada utilizando las siguientes tecnologías:
 - Firebase Autentication
 - Firebase Storage
 
-'''
+```
 git clone repo  
 cd folder  
 npm i  
 ionic serve
-'''
+```
