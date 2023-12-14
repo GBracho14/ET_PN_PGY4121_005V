@@ -1,0 +1,32 @@
+ion-card {
+    border-radius: 15px;
+    padding: 10px;
+    min-height: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.168);
+}
+
+ion-card:hover{
+    cursor: pointer;
+    background: var(--ion-color-light);
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 10px;
+    line-height: 20px;
+}
+
+.tarea-btn { 
+    width: 120px;
+}
+
+.empty {
+    padding-top: 15vh;
+}
+
+/* Estilo para el encabezado */
+ion-header {
+    --ion-background-color: #1c2303;
+    color: #dac5c5;
+  }

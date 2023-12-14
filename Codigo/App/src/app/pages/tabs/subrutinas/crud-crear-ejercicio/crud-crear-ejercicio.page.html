@@ -1,0 +1,77 @@
+<app-header backButton="../"></app-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">crud-put</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <form (keyup.enter)="createNewExercice()" (ngSubmit)="createNewExercice()" class="ion-text-center">
+
+      <app-custom-input [control]="form.controls.name" type="string" label="Nombre de Ejercicio"></app-custom-input>
+      <div class="validators" *ngIf="form.controls.name.errors && form.controls.name.dirty">
+        <div *ngIf="form.controls.name.errors?.['required']">Asigna un nombre al ejercicio</div>
+      </div>
+
+      <app-custom-input [control]="form.controls.class_exercice" type="string" label="Clase de Ejercicio"></app-custom-input>
+      <div class="validators" *ngIf="form.controls.class_exercice.errors && form.controls.class_exercice.dirty">
+        <div *ngIf="form.controls.class_exercice.errors?.['required']">Ingresa el tipo de ejercicio</div>
+      </div>
+
+      <app-custom-input [control]="form.controls.expertis_exercice" type="string" label="Expertís del Ejercicio"></app-custom-input>
+      <div class="validators" *ngIf="form.controls.expertis_exercice.errors && form.controls.expertis_exercice.dirty">
+        <div *ngIf="form.controls.expertis_exercice.errors?.['required']">Ingresa la disciplina a la cual pertenece el ejercicio</div>
+      </div>
+
+      <app-custom-input [control]="form.controls.description_exercice" type="string" label="Descripción"></app-custom-input>
+      <div class="validators" *ngIf="form.controls.description_exercice.errors && form.controls.description_exercice.dirty">
+        <div *ngIf="form.controls.description_exercice.errors?.['required']">Añade una descripción al ejercicio</div>
+      </div>
+
+      <app-custom-input [control]="form.controls.beginer_exercice" type="string" label="Progresión inicial"></app-custom-input>
+      <div class="validators" *ngIf="form.controls.beginer_exercice.errors && form.controls.beginer_exercice.dirty">
+        <div *ngIf="form.controls.beginer_exercice.errors?.['required']">Ingresa una progresión para principiantes</div>
+      </div>
+
+      <app-custom-input [control]="form.controls.inter_exercice" type="string" label="Progresión intermedia"></app-custom-input>
+      <div class="validators" *ngIf="form.controls.inter_exercice.errors && form.controls.inter_exercice.dirty">
+        <div *ngIf="form.controls.inter_exercice.errors?.['required']">Ingresa una progresión para intermedios</div>
+      </div>
+
+      <app-custom-input [control]="form.controls.expert_exercice" type="string" label="Progresión avanzada"></app-custom-input>
+      <div class="validators" *ngIf="form.controls.expert_exercice.errors && form.controls.expert_exercice.dirty">
+        <div *ngIf="form.controls.expert_exercice.errors?.['required']">Ingresa el ejercicio para avanzados</div>
+      </div>
+
+      <ion-button (click)="takeImage()" expand="full" shape="round" class="image-button">
+        Seleccionar Imagen
+      </ion-button>
+
+      <div class="image-container">
+        <ng-container *ngIf="form.value.img_exercice">
+          <ion-item>
+            <img [src]="form.value.img_exercice"/>
+          </ion-item>
+        </ng-container>
+      </div>
+
+      <ion-button class="ion-margin-vertical" [disabled]="form.invalid" type="submit" shape="round" expand="full">
+        Crear Ejercicio
+        <ion-icon slot="end" name="log-in-outline"></ion-icon>
+      </ion-button>
+
+    </form>
+  </ion-card>
+  
+
+</ion-content>
+
+<!-- FOOTER // TABS -->
+  
+<ion-footer>
+  <ion-toolbar>
+    <app-barramenu></app-barramenu>
+  </ion-toolbar>
+</ion-footer>

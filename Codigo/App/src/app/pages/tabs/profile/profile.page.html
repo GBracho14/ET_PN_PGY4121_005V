@@ -1,0 +1,58 @@
+
+<ion-content class="ion-padding">
+  <div class="profile-header ion-text-center">
+    <ion-avatar Style="margin: auto;" *ngIf="form.value.image">
+      <img [src]="form.value.image" />
+    </ion-avatar>
+    <ion-button (click)="takeImage()" [disabled]="!inputEnabled" shape="round">
+      Add Photo
+    </ion-button>
+    <h2 class="profile-name">{{ user.name }}</h2>
+    <div class="profile-email">{{ user.email }}</div>
+  </div>
+
+  <ion-card style="color: aliceblue; margin: auto;">
+    <ion-list lines="none" style="text-align: left; margin-left: 5%; margin: auto; border-radius: 5%;">
+      <ion-buttons style="justify-content: end;" (click)="enableInput()">
+        <h2 style="margin-right: 22%;">Datos</h2>
+        <ion-button>
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <!--Se dibuja Nivel de Actividad Física-->
+      <ion-item>
+        <ion-label>Actividad F: </ion-label>
+        <ion-input [(ngModel)]="antropometrico.nivelActividad" type="string" [disabled]="!inputEnabled"></ion-input>
+      </ion-item>
+      <!--Se dibuja Altura-->
+      <ion-item>
+        <ion-label>Estatura: </ion-label>
+        <ion-input [(ngModel)]="antropometrico.estatura" type="number" class="small-input" [disabled]="!inputEnabled"></ion-input>
+        <ion-text>cm</ion-text>
+      </ion-item>
+      <!--Se dibuja Peso-->
+      <ion-item>
+        <ion-label>Peso: </ion-label>
+        <ion-input [(ngModel)]="antropometrico.peso" type="number" class="small-input" [disabled]="!inputEnabled"></ion-input>
+        <ion-text>Kg</ion-text>
+      </ion-item>
+      <!--Se dibuja Objetivo-->
+      <ion-item>
+        <ion-label>Objetivo: </ion-label>
+        <ion-input [(ngModel)]="antropometrico.objetivo" type="string" class="small-input" [disabled]="!inputEnabled"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button (click)="modifyData()" shape="round" expand="full" class="sign-out-button" *ngIf="inputEnabled">
+      Guardar
+    </ion-button>
+    <ion-button (click)="signOut()" shape="round" expand="full" class="sign-out-button">
+      Cerrar Sesións
+      <ion-icon slot="end" name="log-out-outline"></ion-icon>
+    </ion-button>
+    <ion-button (click)="deleteUser()" shape="round" expand="full" class="sign-out-button">
+      Eliminar Cuenta
+      <ion-icon slot="end" name="log-out-outline"></ion-icon>
+    </ion-button>
+  </ion-card>
+</ion-content>

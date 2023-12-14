@@ -1,0 +1,30 @@
+<!-- proteina.page.html -->
+<ion-content>
+
+  <ion-card *ngFor="let food of foodsWithThresholds" class="food-card difuminado" [ngStyle]="{'background-image': 'url(' + food.img + ')'}">
+  
+    <ion-card-header>
+      <h2 class="food-name">{{ food.name }}</h2>
+      <h2 class="food-name">Cal: {{ food.calories }}</h2>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="food-nutrient">
+        <ion-icon name="fitness" class="icon"></ion-icon> Proteínas: {{ food.protein }}
+      </p>
+      <p class="food-nutrient">
+        <ion-icon name="flame" class="icon"></ion-icon> Carbohidratos: {{ food.carbs }}
+      </p>
+      <p class="food-nutrient">
+        <ion-icon name="color-fill" class="icon"></ion-icon> Grasas: {{ food.fats }}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<!-- FOOTER // TABS -->
+<ion-footer>
+  <ion-toolbar>
+    <app-barramenu></app-barramenu>
+  </ion-toolbar>
+</ion-footer>
